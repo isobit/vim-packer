@@ -16,16 +16,13 @@ endif
 
 syn case match
 
-syn keyword packerSection connection output variable terraform locals
+syn keyword packerSection variable locals build source provisioner post-processor source
 syn keyword packerValueBool true false on off yes no
 
 syn keyword packerTodo         contained TODO FIXME XXX BUG
 syn region  packerComment      start="/\*" end="\*/" contains=packerTodo,@Spell
 syn region  packerComment      start="#" end="$" contains=packerTodo,@Spell
 syn region  packerComment      start="//" end="$" contains=packerTodo,@Spell
-
-syn keyword packerBlockKeyword build source provisioner post-processor source nextgroup=packerBlockString,packerBlock skipwhite
-syn region  packerBlockString start=/"/ end=/"/ nextgroup=packerBlock skipwhite
 
 """ dynamic (HCL2)
 syn keyword packerDynamic     dynamic nextgroup=packerDynamicName skipwhite
@@ -58,8 +55,6 @@ syn region packerBlock matchgroup=packerBraces start="{" end="}" fold transparen
 
 hi def link packerComment           Comment
 hi def link packerBraces            Delimiter
-hi def link packerBlockKeyword      Structure
-hi def link packerBlockString       String
 hi def link packerSection           Structure
 hi def link packerValueBool         Boolean
 hi def link packerValueDec          Number
