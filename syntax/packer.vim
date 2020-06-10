@@ -54,6 +54,7 @@ syn keyword packerValueNull      null
 syn region packerBlock matchgroup=packerBraces start="{" end="}" fold transparent
 
 hi def link packerComment           Comment
+hi def link packerTodo              Todo
 hi def link packerBraces            Delimiter
 hi def link packerSection           Structure
 hi def link packerValueBool         Boolean
